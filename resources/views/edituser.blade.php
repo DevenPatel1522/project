@@ -1,44 +1,14 @@
-@extends('layouts.app')
 
-@section('content')
-    {{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-                <div class="card-body">
-                    You are Admin.
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
-@endsection
+
+
+
+
+      
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <style>
-        .main-content{
-            text-align: center;
-        }
-        table {
-            text-align: center;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#mytable').DataTable();
-        });
-    </script>
-</head>
 
 @include('link')
-
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -46,8 +16,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="{{ url('index') }}">
-                            <img src="{{ asset('public/images/icon/logo.png') }}" alt="CoolAdmin" />
+                        <a class="logo" href="{{url('index')}}">
+                            <img src="{{asset('public/images/icon/logo.png')}}" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -63,117 +33,9 @@
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
+                            </li>
 
-                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="{{ url('index') }}">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('index2') }}">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('index3') }}">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('index4') }}">Dashboard 4</a>
-                            </li>
-                        </ul>
-                        <li>
-                            <a href="{{ url('chart') }}">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('table') }}">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('form') }}">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('calendar') }}">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('map') }}">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="{{ url('login') }}">Login</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('register') }}">Register</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('forget-pass') }}">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="{{ url('button') }}">Button</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('badge') }}">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('tab') }}">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('card') }}">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('alert') }}">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('progress-bar') }}">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('modal') }}">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('switch') }}">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('grid') }}">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('fontawesome') }}">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('typo') }}">Typography</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- END HEADER MOBILE-->
-
-        <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
-                <a href="#">
-                    <img src="{{ asset('public/images/icon/logo.png') }}" alt="Cool Admin" />
-                </a>
-            </div>
-            <div class="menu-sidebar__content js-scrollbar1">
-                <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="{{url('home')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
-                        {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{url('index')}}">Dashboard 1</a>
                                 </li>
@@ -196,6 +58,114 @@
                                 <i class="fas fa-table"></i>Tables</a>
                         </li>
                         <li>
+                            <a href="{{url('form')}}">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="{{url('calendar')}}">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="{{url('map')}}">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{url('login')}}">Login</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('register')}}">Register</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('forget-pass')}}">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{url('button')}}">Button</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('badge')}}">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('tab')}}">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('card')}}">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('alert')}}">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('progress-bar')}}">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('modal')}}">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('switch')}}">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('grid')}}">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('fontawesome')}}">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('typo')}}">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{asset('public/images/icon/logo.png')}}" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="{{url('/admin/home')}}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+                            {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{url('index')}}">Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('index2')}}">Dashboard 2</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('index3')}}">Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('index4')}}">Dashboard 4</a>
+                                </li>
+                            </ul>--}}
+                        <li>
+                            <a href="{{url('adduser')}}">
+                                <i class="zmdi zmdi-account"></i>Add User</a>
+                        </li>
+                       <li>
+                            <a href="{{url('viewuser')}}">
+                                <i class="zmdi zmdi-account"></i>View User</a>
+                        </li>
+                        {{-- <li>
                             <a href="{{url('form')}}">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
@@ -275,8 +245,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search"
-                                    placeholder="Search for datas &amp; reports..." />
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -292,8 +261,7 @@
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-06.jpg') }}"
-                                                        alt="Michelle Moreno" />
+                                                    <img src="{{asset('public/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
                                                 </div>
                                                 <div class="content">
                                                     <h6>Michelle Moreno</h6>
@@ -303,8 +271,7 @@
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-04.jpg') }}"
-                                                        alt="Diane Myers" />
+                                                    <img src="{{asset('public/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
                                                 </div>
                                                 <div class="content">
                                                     <h6>Diane Myers</h6>
@@ -326,8 +293,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-06.jpg') }}"
-                                                        alt="Cynthia Harvey" />
+                                                    <img src="{{asset('public/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
@@ -336,8 +302,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-05.jpg') }}"
-                                                        alt="Cynthia Harvey" />
+                                                    <img src="{{asset('public/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
@@ -346,8 +311,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-04.jpg') }}"
-                                                        alt="Cynthia Harvey" />
+                                                    <img src="{{asset('public/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
@@ -402,8 +366,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('public/images/icon/avatar-01.jpg') }}"
-                                                alt="John Doe" />
+                                            <img src="{{asset('public/images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -412,8 +375,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ asset('public/images/icon/avatar-01.jpg') }}"
-                                                            alt="John Doe" />
+                                                        <img src="{{asset('public/images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -425,11 +387,11 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('forgotpassword')}}">
-                                                        <i class="zmdi zmdi-account"></i>Forgot Password</a>
+                                                    <a href="{{url('account')}}">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
 
-                                               {{--  <div class="account-dropdown__item">
+                                                <div class="account-dropdown__item">
                                                     <a href="{{url('register')}}">
                                                         <i class="zmdi zmdi-account"></i>Register</a>
                                                 </div>
@@ -442,20 +404,21 @@
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div> --}}
-                                               
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
                                             </div>
-                                            <div class="account-dropdown__footer">
-                                                <a class="account-dropdown__footer" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();"><i
-                                                        class="zmdi zmdi-power"></i>{{ __('Logout') }}</a>
+                                             <div class="account-dropdown__footer" >
+                                            <a class="account-dropdown__footer" href="{{ url('logout') }}"
+                                                  onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();" ><i class="zmdi zmdi-power"></i>{{ __('Logout') }}</a>
 
-                                                <form id="logout-form" action="{{ route('logout') }}"
-                                                    method="POST" class="d-none">
+                                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                     @csrf
                                                 </form>
-                                            </div>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>
@@ -470,22 +433,87 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
 
-                    <table  id="mytable" class="display">
-                        <tr>
-                            <th>Id</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>Action</th>
-                        </tr>
-                        @foreach ($users as $key => $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td><a ></a></td>
-                            </tr>
-                        @endforeach
-                    </table>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('updateuser',$user->id) }}">
+                        @csrf
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ $user->password}}" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="text" class="form-control" name="password_confirmation"  value="{{$user->password}}" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
                     {{-- <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
@@ -1031,9 +1059,101 @@
     </div>
 
     <!-- Jquery JS-->
-    @include('script')
+   @include('script')
 
 </body>
 
 </html>
 <!-- end document-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{-- {{ route('edituser') }} --}}">
+                        @csrf
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

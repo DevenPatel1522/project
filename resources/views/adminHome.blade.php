@@ -14,6 +14,8 @@
     </div>
 </div> --}}
 @endsection
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,7 +152,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{ url('admin/home')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                             {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -166,16 +168,16 @@
                                 <li>
                                     <a href="{{url('index4')}}">Dashboard 4</a>
                                 </li>
-                            </ul>
+                            </ul>--}}
+                        {{-- <li>
+                            <a href="{{url('adduser')}}">
+                                <i class="zmdi zmdi-account"></i>Add User</a>
+                        </li> --}}
                         <li>
-                            <a href="{{url('chart')}}">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="{{url('viewuser')}}">
+                                <i class="zmdi zmdi-account"></i>Users</a>
                         </li>
-                        <li>
-                            <a href="{{url('table')}}">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
+                       {{-- <li>
                             <a href="{{url('form')}}">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
@@ -392,22 +394,22 @@
                                                     <h5 class="name">
                                                         <a href="#">john doe</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">deven.patel@300minds.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('account')}}">
+                                                    <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
 
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('register')}}">
+                                                    <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Register</a>
                                                 </div>
 
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('login')}}">
+                                                    <a href="#">
                                                         <i class="zmdi zmdi-account"></i>login</a>
                                                 </div>
                                     

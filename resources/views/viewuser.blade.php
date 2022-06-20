@@ -14,28 +14,11 @@
     </div>
 </div> --}}
 @endsection
+
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <style>
-        .main-content{
-            text-align: center;
-        }
-        table {
-            text-align: center;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#mytable').DataTable();
-        });
-    </script>
-</head>
 
 @include('link')
 
@@ -170,7 +153,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="{{url('home')}}">
+                            <a class="js-arrow" href="{{url('admin/home')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -186,16 +169,16 @@
                                 <li>
                                     <a href="{{url('index4')}}">Dashboard 4</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
+                        {{-- <li>
+                            <a href="{{ url('adduser') }}">
+                                <i class="zmdi zmdi-account"></i>Add User</a>
+                        </li> --}}
                         <li>
-                            <a href="{{url('chart')}}">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="{{ url('viewuser') }}">
+                                <i class="zmdi zmdi-account"></i>Users</a>
                         </li>
-                        <li>
-                            <a href="{{url('table')}}">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{url('form')}}">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
@@ -425,28 +408,31 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('forgotpassword')}}">
-                                                        <i class="zmdi zmdi-account"></i>Forgot Password</a>
+                                                    <a href="{{ url('account') }}">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
 
-                                               {{--  <div class="account-dropdown__item">
-                                                    <a href="{{url('register')}}">
+                                                <div class="account-dropdown__item">
+                                                    <a href="{{ url('register') }}">
                                                         <i class="zmdi zmdi-account"></i>Register</a>
                                                 </div>
 
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('login')}}">
+                                                    <a href="{{ url('login') }}">
                                                         <i class="zmdi zmdi-account"></i>login</a>
                                                 </div>
-                                    
+
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div> --}}
-                                               
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a class="account-dropdown__footer" href="{{ route('logout') }}"
+                                                <a class="account-dropdown__footer" href="{{ url('logout') }}"
                                                     onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();"><i
                                                         class="zmdi zmdi-power"></i>{{ __('Logout') }}</a>
@@ -470,11 +456,14 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
 
-                    <table  id="mytable" class="display">
+                    <a class="btn btn-success mb-3" href="{{url('adduser')}}">Add User</a>
+
+                    <table id="mytable" class="table table-striped table-hover">
                         <tr>
                             <th>Id</th>
                             <th>name</th>
                             <th>email</th>
+                            <th>password</th>
                             <th>Action</th>
                         </tr>
                         @foreach ($users as $key => $user)
@@ -482,7 +471,26 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td><a ></a></td>
+                                <td>{{ $user->password }}</td>
+                                <td>
+
+
+                                    {{-- <a class="btn btn-primary" href="{{ url('edituser', $user->id) }}">Edit</a>
+                                    <a class="btn btn-danger" href="">Delete</a> --}}
+
+                                    <form action="{{ route('destroy', $user->id) }}" method="POST">
+
+                                
+
+                                        <a class="btn btn-primary" href="{{ route('edituser', $user->id) }}">Edit</a>
+
+
+                                        @csrf
+                                        @method('delete')
+
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

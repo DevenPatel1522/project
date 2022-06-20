@@ -150,7 +150,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{url('home')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                             {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -392,16 +392,16 @@
                                                     <h5 class="name">
                                                         <a href="#">john doe</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">deven.patel@300minds.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                    <a href="{{url('forgotpassword')}}">
+                                                        <i class="zmdi zmdi-account"></i>Forgot Password</a>
                                                 </div>
 
-                                                <div class="account-dropdown__item">
+                                               {{--  <div class="account-dropdown__item">
                                                     <a href="{{url('register')}}">
                                                         <i class="zmdi zmdi-account"></i>Register</a>
                                                 </div>
@@ -414,11 +414,8 @@
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
+                                                </div> --}}
+                                               
                                             </div>
                                             <div class="account-dropdown__footer" >
                                                 <a class="account-dropdown__footer" href="{{ route('logout') }}"

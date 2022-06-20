@@ -1,13 +1,13 @@
 @extends('layouts.app')
-
+   
 @section('content')
-    {{-- <div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
-                    You are Admin.
+                    You are normal user.
                 </div>
             </div>
         </div>
@@ -17,28 +17,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <style>
-        .main-content{
-            text-align: center;
-        }
-        table {
-            text-align: center;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#mytable').DataTable();
-        });
-    </script>
-</head>
 
 @include('link')
-
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -46,8 +26,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="{{ url('index') }}">
-                            <img src="{{ asset('public/images/icon/logo.png') }}" alt="CoolAdmin" />
+                        <a class="logo" href="{{url('index')}}">
+                            <img src="{{asset('public/images/icon/logo.png')}}" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -63,40 +43,40 @@
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
+                            </li>
 
-                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="{{ url('index') }}">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('index2') }}">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('index3') }}">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('index4') }}">Dashboard 4</a>
-                            </li>
-                        </ul>
+                            {{-- <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{url('index')}}">Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('index2')}}">Dashboard 2</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('index3')}}">Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('index4')}}">Dashboard 4</a>
+                                </li>
+                            </ul>
                         <li>
-                            <a href="{{ url('chart') }}">
+                            <a href="{{url('chart')}}">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
-                            <a href="{{ url('table') }}">
+                            <a href="{{url('table')}}">
                                 <i class="fas fa-table"></i>Tables</a>
                         </li>
                         <li>
-                            <a href="{{ url('form') }}">
+                            <a href="{{url('form')}}">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
-                            <a href="{{ url('calendar') }}">
+                            <a href="{{url('calendar')}}">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
                         </li>
                         <li>
-                            <a href="{{ url('map') }}">
+                            <a href="{{url('map')}}">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
                         <li class="has-sub">
@@ -104,13 +84,13 @@
                                 <i class="fas fa-copy"></i>Pages</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="{{ url('login') }}">Login</a>
+                                    <a href="{{url('login')}}">Login</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('register') }}">Register</a>
+                                    <a href="{{url('register')}}">Register</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('forget-pass') }}">Forget Password</a>
+                                    <a href="{{url('forget-pass')}}">Forget Password</a>
                                 </li>
                             </ul>
                         </li>
@@ -119,40 +99,40 @@
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="{{ url('button') }}">Button</a>
+                                    <a href="{{url('button')}}">Button</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('badge') }}">Badges</a>
+                                    <a href="{{url('badge')}}">Badges</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('tab') }}">Tabs</a>
+                                    <a href="{{url('tab')}}">Tabs</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('card') }}">Cards</a>
+                                    <a href="{{url('card')}}">Cards</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('alert') }}">Alerts</a>
+                                    <a href="{{url('alert')}}">Alerts</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('progress-bar') }}">Progress Bars</a>
+                                    <a href="{{url('progress-bar')}}">Progress Bars</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('modal') }}">Modals</a>
+                                    <a href="{{url('modal')}}">Modals</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('switch') }}">Switchs</a>
+                                    <a href="{{url('switch')}}">Switchs</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('grid') }}">Grids</a>
+                                    <a href="{{url('grid')}}">Grids</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('fontawesome') }}">Fontawesome Icon</a>
+                                    <a href="{{url('fontawesome')}}">Fontawesome Icon</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('typo') }}">Typography</a>
+                                    <a href="{{url('typo')}}">Typography</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </nav>
@@ -163,7 +143,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="{{ asset('public/images/icon/logo.png') }}" alt="Cool Admin" />
+                    <img src="{{asset('public/images/icon/logo.png')}}" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -173,7 +153,7 @@
                             <a class="js-arrow" href="{{url('home')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            {{-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{url('index')}}">Dashboard 1</a>
                                 </li>
@@ -275,8 +255,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search"
-                                    placeholder="Search for datas &amp; reports..." />
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -292,8 +271,7 @@
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-06.jpg') }}"
-                                                        alt="Michelle Moreno" />
+                                                    <img src="{{asset('public/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
                                                 </div>
                                                 <div class="content">
                                                     <h6>Michelle Moreno</h6>
@@ -303,8 +281,7 @@
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-04.jpg') }}"
-                                                        alt="Diane Myers" />
+                                                    <img src="{{asset('public/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
                                                 </div>
                                                 <div class="content">
                                                     <h6>Diane Myers</h6>
@@ -326,8 +303,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-06.jpg') }}"
-                                                        alt="Cynthia Harvey" />
+                                                    <img src="{{asset('public/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
@@ -336,8 +312,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-05.jpg') }}"
-                                                        alt="Cynthia Harvey" />
+                                                    <img src="{{asset('public/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
@@ -346,8 +321,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="{{ asset('public/images/icon/avatar-04.jpg') }}"
-                                                        alt="Cynthia Harvey" />
+                                                    <img src="{{asset('public/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
@@ -402,8 +376,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('public/images/icon/avatar-01.jpg') }}"
-                                                alt="John Doe" />
+                                            <img src="{{asset('public/images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -412,8 +385,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ asset('public/images/icon/avatar-01.jpg') }}"
-                                                            alt="John Doe" />
+                                                        <img src="{{asset('public/images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -445,17 +417,15 @@
                                                 </div> --}}
                                                
                                             </div>
-                                            <div class="account-dropdown__footer">
+                                            <div class="account-dropdown__footer" >
                                                 <a class="account-dropdown__footer" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();"><i
-                                                        class="zmdi zmdi-power"></i>{{ __('Logout') }}</a>
-
-                                                <form id="logout-form" action="{{ route('logout') }}"
-                                                    method="POST" class="d-none">
-                                                    @csrf
-                                                </form>
-                                            </div>
+                                                      onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();" ><i class="zmdi zmdi-power"></i>{{ __('Logout') }}</a>
+    
+                                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                    </form>
+                                                 </div>
                                         </div>
                                     </div>
                                 </div>
@@ -469,24 +439,59 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
+                    <div class="cotainer">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">Reset Password</div>
+                                    <div class="card-body">
+                    
+                                      @if (Session::has('message'))
+                                           <div class="alert alert-success" role="alert">
+                                              {{ Session::get('message') }}
+                                          </div>
+                                      @endif
+                    
+                                        <form action=" {{ route('reset.password.post') }} " method="POST">
+                                            @csrf
+                                            <div class="col-md-6">
+                                                <input type="text" name="email" class="form-control"  value="{{$user_email}}">
+                                                </div>
+                                            <div class="form-group row">
+                                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="password" class="form-control" name="password" required autofocus>
+                                                    @if ($errors->has('password'))
+                                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
 
-                    <table  id="mytable" class="display">
-                        <tr>
-                            <th>Id</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>Action</th>
-                        </tr>
-                        @foreach ($users as $key => $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td><a ></a></td>
-                            </tr>
-                        @endforeach
-                    </table>
-                    {{-- <div class="container-fluid">
+                                            <div class="form-group row">
+                                                <label for="c_password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="c_password" class="form-control" name="c_password" required autofocus>
+                                                    @if ($errors->has('c_password'))
+                                                        <span class="text-danger">{{ $errors->first('c_password') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </form>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                     {{--<div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
@@ -1031,9 +1036,10 @@
     </div>
 
     <!-- Jquery JS-->
-    @include('script')
+   @include('script')
 
 </body>
 
 </html>
 <!-- end document-->
+

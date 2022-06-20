@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\forgotpassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Session\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+
 
 class CooladminController extends Controller
 {
@@ -133,14 +136,125 @@ class CooladminController extends Controller
         return view('typo');
     }
 
-    public function account()
-
-    {       $users = DB::select('select * from users');
-        return view('account',['users' => $users]);
+    public function adduser()
+    {
+        return view('adduser');
     }
 
-    public function logout(){
-        
+
+    public function dashboard()
+    {
+        return view('adminHome');
+    }
+
+    public function home()
+    {
+        return view('home');
+    }
+
+
+
+    public function viewuser(User $users)
+    {
+        $users = User::all();
+        return view('viewuser', compact('users'));
+    }
+
+
+    public function edituser($id)
+    {
+        $user = User::where('id', '=', $id)->first();
+        return view('edituser', compact('user'));
+    }
+
+    public function forgotpassword()
+    {
+        return view('forgotpassword');
+    }
+
+    public function postforgot(Request $request)
+    {
+        $data = User::where('email', '=', $request->email)->first();
+        if ($data) {
+            Mail::to($request->email)->send(new forgotpassword($data));
+            return redirect('forgotpassword');
+        }
+        else {
+            dd('email address not found');
+        }
+    }
+
+    public function postresetpassword(Request $request)
+    {
+        $user_password = User::where('email','=', $request->email)->first();
+        if($user_password){
+            $user_password->password = $request->password;
+            $user_password->save();
+            return redirect('/viewuser');
+        }else{
+            dd('email not exists');
+        }
+    }
+
+    public function resetpassword($email)
+    
+    {
+        $user_email = $email;
+        return view('resetpassword',compact('user_email'));
+    }
+
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('viewuser');
+    }
+
+    public function useradd(Request $request)
+    {
+
+        $user = User::where('email', '=', $request->email)->first();
+        if ($user) {
+            dd('email already exist');
+        }
+        else {
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->save();
+
+            return redirect('/viewuser');
+        }
+    }
+
+
+    public function postedituser(Request $request, $id)
+    {
+        $user = User::where('id', '=', $id)->first();
+        if ($user) {
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->save();
+            return redirect('/viewuser');
+        }
+        else {
+            dd('something went wrong');
+        }
+    }
+
+
+    public function account()
+    {
+        $users = DB::select('select * from users');
+        return view('account', ['users' => $users]);
+    }
+
+    public function logout()
+    {
+
         Session::flush();
         Auth::logout();
 
